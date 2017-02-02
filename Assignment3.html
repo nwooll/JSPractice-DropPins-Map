@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>A00987471 - Assignment 3 Map</title>
+  
+    <style>
+        
+        body{
+             background: url("map.jpg");
+    background-size: cover;
+                background-position:top center;
+background-repeat: no-repeat;   
+        }
+        
+        #pin{
+            height: 50px;
+         z-index: -1;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+           
+        }
+        
+    </style>
+    </head>
+    <body>
+        
+        <button id="blue" onclick="pictureChange2()">Blue Pin</button>
+        <button id="red" onclick="pictureChange()">Red Pin</button>
+        <button id="up">Up</button>
+        <button id="down">Down</button>
+        <button id="left">Left</button>
+        <button id="right">Right</button>
+        <button id="newpin">Create Mark</button>
+        <input type="number" id="input1">
+        <input type="number" id="input2">
+        <img src="bpin.png" id="pin">
+        
+    <script>
+        
+        //Change Pin Color
+        function pictureChange()
+        {
+        document.getElementById("pin").src="rpin.png";
+            }
+        
+        function pictureChange2()
+        {
+        document.getElementById("pin").src="bpin.png";
+            }
+        
+        //Navigational Buttons
+        
+        var upbutton = document.getElementById("up");
+        var downbutton = document.getElementById("down");
+        var leftbutton = document.getElementById("left");
+        var rightbutton = document.getElementById("right");
+        var pins = document.getElementById("pin");
+        var num= 0;
+        
+     var y = 0;
+        var x= 0;
+        
+        upbutton.addEventListener ("click", function(){
+            y = y - 5;
+            pins.style.top = y+"px";
+        });
+        
+        downbutton.addEventListener ("click", function(){
+            y = y + 5;
+            pins.style.top = y+"px";
+        });
+        
+        leftbutton.addEventListener ("click", function(){
+            x = x - 5;
+            pins.style.left = x+"px";
+        });
+        
+        rightbutton.addEventListener ("click", function(){
+            x = x + 5;
+            pins.style.left = x + "px";
+        });
+            
+        //Create new marker
+        
+      
+        var create = document.getElementById("newpin");
+        
+         create.addEventListener("click", function(){
+            console.log("New Pin Created");
+             
+     
+
+                
+                var newimg = document.createElement("img");
+                newimg.src = "bpin.png";
+                newimg.style.height = "50px";
+            newimg.style.zIndex = "-1";
+            newimg.style.position = "absolute";
+             newimg.style.top = y +"px";
+             newimg.style.left = x +"px";
+             
+            document.body.appendChild(newimg);
+      
+             });
+        
+        // Coordinates
+        
+         //  var numb = document.getElementById("input1").value;
+  
+        //var numb2 = document.getElementById("input2").value;
+        
+      
+        input1.addEventListener("change", function(){
+            if(input1 ==NaN){}
+        else {
+            x = parseInt(input1.value);
+            pin.style.top = x +"px";
+        }
+            
+            
+           
+        }) 
+        
+           input2.addEventListener("change", function(){
+            if(input2 ==NaN){}
+        else {
+            x = parseInt(input2.value);
+            pin.style.top = x +"px";
+        }
+            
+            
+           
+        }) 
+        
+        </script>
+    </body>
+</html>
+    
